@@ -1,0 +1,8 @@
+<h1>Log in </h1>
+
+<%= form_with( url: create_session_users_path ) do |f| %>
+  <%= label :username, "username", class: '' %>
+  <%= f.text_field :username %>
+  <br/>
+  <%= f.submit ("Sign in") %>
+<% end %>

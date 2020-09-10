@@ -1,0 +1,16 @@
+
+<%= form_with model: @user do |f| %>
+  <%= label_tag(:username, "Username", class: "") %>
+  <%= f.text_field :username %>
+  <br/>
+  <%= label_tag(:first_name, "First Name") %>
+  <%= f.text_field :first_name %>
+  <br/>
+  <%= label_tag(:last_name, "Last Name") %>
+  <%= f.text_field :last_name %>
+  <br/>
+  <%= label_tag(:email, "Email") %>
+  <%= f.email_field :email %>
+  <br/>
+  <%= f.submit "Sign Up", class: "btn btn-success" %>
+<% end %>
