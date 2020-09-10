@@ -7,9 +7,17 @@ class UsersController < ApplicationController
 
   def create
     byebug
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to 'show'
+    else
+      render 'new'
+    end
   end
 
-  def show; end
+  def show
+    @events = helpers.current_user.created_events
+  end
 
   def edit; end
 
@@ -20,9 +28,16 @@ class UsersController < ApplicationController
   def create_session
     c_user = User.find_by(username: params['username'])
     if c_user.nil?
-      render new_session
+      render 'new_session'
     else
-      Session[:user_name] = c_user.username
+      session[:user_id] = c_user.id
+      render 'show'
     end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:first_name, :username, :last_name, :email)
   end
 end
