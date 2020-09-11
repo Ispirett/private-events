@@ -1,23 +1,20 @@
 class EventsController < ApplicationController
-    def new
-        # @event = helpers.current_user.created_events.build
-        # byebug
-    end
+  def new
+    @event = Event.new
+  end
 
-    def create
-        byebug
-        @event = Event.new(event_params)
-        byebug
-        if @event.save
-            redirect_to user_path(session[:user_id])
-        else
-            render 'new'
-        end
+  def create
+    @event = Event.new(event_params.merge(creator_id: session[:user_id]))
+    if @event.save
+      redirect_to user_path(session[:user_id])
+    else
+      render 'new'
     end
-    
-    private
+  end
 
-    def event_params
-        params.require(:event).permit(:event_name, :event_place, :event_date, :creator_id)
-    end
+  private
+
+  def event_params
+    params.require(:event).permit(:event_name, :event_place, :event_date, :creator_id)
+  end
 end

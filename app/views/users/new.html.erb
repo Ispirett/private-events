@@ -12,5 +12,8 @@
   <%= label_tag(:email, "Email") %>
   <%= f.email_field :email %>
   <br/>
+  <%= label_tag(:avatar, "Choose Image") %>
+  <%= f.file_field :avatar %>
+  <br/>
   <%= f.submit "Sign Up", class: "btn btn-success" %>
 <% end %>

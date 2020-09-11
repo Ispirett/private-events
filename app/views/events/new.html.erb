@@ -1,5 +1,4 @@
-<%# <%= form_with model:@event do |f|%> 
-<%= form_with(model: [ current_user, current_user.created_events.build ], local: true) do |form| %>
+<%= form_with model:@event do |f|%> 
 <%= label_tag(:event_name, "Event Name", class: "") %>
   <%= f.text_field :event_name %>
   <br/>
@@ -7,7 +6,10 @@
   <%= f.text_field :event_place %>
   <br/>
   <%= label_tag(:event_date, "Event Date") %>
-<%= datetime_local_field(:event, :event_date) %>
+  <%= datetime_local_field(:event, :event_date) %>
+  <br/>
+  <%= label_tag(:event_image, "Choose event image") %>
+  <%= f.file_field :event_image %>
   <br/>
   <%= f.submit "Create Event", class: "btn btn-success" %>
 <% end %>
