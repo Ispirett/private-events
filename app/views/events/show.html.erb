@@ -1,0 +1,16 @@
+<h2>Event Details</h2>
+<%= image_tag(url_for(@event.event_image)) %>
+<%= @event.event_name %>
+<br>
+<%= @event.event_place %>
+<br>
+<%= @event.event_date %>
+<h2>User Details</h2>
+<%= image_tag(url_for(@event.creator.avatar)) %>
+<%= @event.creator.first_name %>
+<br>
+<%= @event.creator.last_name %>
+<br>
+<%= @event.creator.email %>
+<br>
+<%= @event.creator.username %>

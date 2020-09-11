@@ -1,0 +1,17 @@
+<table>
+<tr>
+<th>Event Name</th>
+<th>Event Place</th>
+<th>Event Date</th>
+<th>Details</th>
+</tr>
+<% @events.each do |e|%>
+<tr>
+<td><%= e.event_name %></td>
+<td><%= e.event_place %></td>
+<td><%= e.event_date %></td>
+<td><%= link_to 'Details', events_path(e.id) %></td>
+</tr>
+<%end%>
+
+</table>
