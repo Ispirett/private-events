@@ -6,10 +6,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    byebug
     @user = User.new(user_params)
     if @user.save
-      redirect_to 'show'
+      redirect_to new_session_users_path
     else
       render 'new'
     end
@@ -31,7 +30,7 @@ class UsersController < ApplicationController
       render 'new_session'
     else
       session[:user_id] = c_user.id
-      render 'show'
+      redirect_to user_path(c_user.id)
     end
   end
 

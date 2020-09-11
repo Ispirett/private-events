@@ -1,0 +1,13 @@
+<%# <%= form_with model:@event do |f|%> 
+<%= form_with(model: [ current_user, current_user.created_events.build ], local: true) do |form| %>
+<%= label_tag(:event_name, "Event Name", class: "") %>
+  <%= f.text_field :event_name %>
+  <br/>
+  <%= label_tag(:event_place, "Event Location") %>
+  <%= f.text_field :event_place %>
+  <br/>
+  <%= label_tag(:event_date, "Event Date") %>
+<%= datetime_local_field(:event, :event_date) %>
+  <br/>
+  <%= f.submit "Create Event", class: "btn btn-success" %>
+<% end %>
