@@ -1,11 +1,13 @@
 <h2>Event Details</h2>
 <%= image_tag(url_for(@event.event_image)) %>
+<br>
 <%= @event.event_name %>
 <br>
 <%= @event.event_place %>
 <br>
 <%= @event.event_date %>
-<h2>User Details</h2>
+<%= button_to 'Rigester', register_event_path(@event.id), methd: :post %>
+<h2>Creator</h2>
 <%= image_tag(url_for(@event.creator.avatar)) %>
 <%= @event.creator.first_name %>
 <br>
@@ -14,3 +16,19 @@
 <%= @event.creator.email %>
 <br>
 <%= @event.creator.username %>
+<h2>Event Attendees</h2>
+<table>
+<tr>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Email</th>
+</tr>
+<% @event.attendees.each do |e|%>
+<tr>
+<td><%= e.first_name %></td>
+<td><%= e.last_name %></td>
+<td><%= e.email %></td>
+</tr>
+<%end%>
+
+</table>

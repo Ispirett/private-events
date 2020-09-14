@@ -21,6 +21,13 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def register
+    e = EventAttendee.create(event_id: params[:id], user_id: session[:user_id])
+    byebug
+    flash[:notice] = 'Hello'
+    redirect_to events_path
+
+  end
 
   private
 
