@@ -1,8 +1,18 @@
-<h1>Log in </h1>
-
-<%= form_with( url: create_session_users_path ) do |f| %>
-  <%= label :username, "username", class: '' %>
-  <%= f.text_field :username %>
-  <br/>
-  <%= f.submit ("Sign in") %>
-<% end %>
+<div class="hero-bg">
+  <div class="main d-flex justify-content-center align-items-center flex-column">
+    <h2>Log in </h2>
+    <br>
+    <div class= "form">
+    <%= form_with( url: create_session_users_path ,class: 'form') do |f| %>
+      <%= label :username, "username ", class: 'm-5' %>
+      <%= f.text_field :username, placeholder: 'username', class: 'mr-5' %>
+      <br/>
+      <div class="d-flex flex-row align-items-center pr-2">
+        <%= f.submit ("Sign in"), class: 'login-btn mb-3 btn-success btn' %>
+        <p class="ml-2 mt-3 mr-2">or</p>
+        <%= link_to 'Sign Up', new_user_path %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>

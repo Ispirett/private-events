@@ -24,28 +24,30 @@
   <% end %>
 </table>
 <h2>Registered Events</h2>
-<h3>Previously Attended Events</h3>
-<table>
-  <tr>
-    <th>Event Name</th>
-    <th>Event Place</th>
-    <th>Event Time</th>
-  </tr>
-  <% current_user.events.past.each do |e| %>
-      <tr>
-        <td>
-          <%= e.event_name %>
-        </td>
-        <td>
-          <%= e.event_place %>
-        </td>
-        <td>
-          <%= e.event_date %>
-        </td>
-      </tr>
-  <% end %>
-</table>
-
+<% byebug %>
+<% if !(current_user.events.past.nil?) %>
+  <h3>Previously Attended Events</h3>
+  <table>
+    <tr>
+      <th>Event Name</th>
+      <th>Event Place</th>
+      <th>Event Time</th>
+    </tr>
+    <% current_user.events.past.each do |e| %>
+        <tr>
+          <td>
+            <%= e.event_name %>
+          </td>
+          <td>
+            <%= e.event_place %>
+          </td>
+          <td>
+            <%= e.event_date %>
+          </td>
+        </tr>
+    <% end %>
+  </table>
+<% end %>
 <h3>Upcoming Attended Events</h3>
 <table>
   <tr>

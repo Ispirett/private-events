@@ -1,3 +1,45 @@
 // Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+body,
+html {
+    height: 100%;
+}
+
+.login-btn {
+    margin: 20px 0 0 180px;
+}
+
+.hero-bg {
+    background-image: image-url("event-bg.jpeg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding-top: 130px;
+}
+
+h2 {
+    color: blanchedalmond;
+    font-size: bold;
+}
+
+.login-btn:hover {
+    color: wheat;
+    background-color: blue;
+}
+
+.form {
+    background-color: white;
+    opacity: .8;
+    border-radius: 4px;
+}
+
+.email {
+    margin: 10px 0 0 45px;
+}
+
+.email_tag {
+    margin-left: 9px;
+}
