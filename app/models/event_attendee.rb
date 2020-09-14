@@ -1,4 +1,6 @@
+# frozen_string_literal: true
+
 class EventAttendee < ApplicationRecord
-    belongs_to :user , class_name: "User"
-    belongs_to :event , class_name: "Event"
+  belongs_to :attendee, class_name: 'User'
+  belongs_to :event
 end

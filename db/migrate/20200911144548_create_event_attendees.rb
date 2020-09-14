@@ -1,9 +1,8 @@
+# frozen_string_literal: true
+
 class CreateEventAttendees < ActiveRecord::Migration[6.0]
   def change
     create_table :event_attendees do |t|
-      t.integer :attendee_id
-      t.integer :event_id
-
       t.timestamps
     end
   end
