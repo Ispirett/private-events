@@ -1,5 +1,6 @@
-class EventsController < ApplicationController
+# frozen_string_literal: true
 
+class EventsController < ApplicationController
   def index
     @events = Event.all
   end
@@ -23,10 +24,8 @@ class EventsController < ApplicationController
 
   def register
     e = EventAttendee.create(event_id: params[:id], user_id: session[:user_id])
-    byebug
     flash[:notice] = 'Hello'
     redirect_to events_path
-
   end
 
   private

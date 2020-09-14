@@ -1,3 +1,5 @@
+
+<h2>Past Events</h2>
 <table>
 <tr>
 <th>Event Name</th>
@@ -5,7 +7,7 @@
 <th>Event Date</th>
 <th>Details</th>
 </tr>
-<% @events.each do |e|%>
+<% @events.past.each do |e|%>
 <tr>
 <td><%= e.event_name %></td>
 <td><%= e.event_place %></td>
@@ -14,4 +16,23 @@
 </tr>
 <%end%>
 
+</table>
+
+
+<h2>Upcomming Events</h2>
+<table>
+<tr>
+<th>Event Name</th>
+<th>Event Place</th>
+<th>Event Date</th>
+<th>Details</th>
+</tr>
+<% @events.upcomming.each do |e|%>
+<tr>
+<td><%= e.event_name %></td>
+<td><%= e.event_place %></td>
+<td><%= e.event_date %></td>
+<td><%= link_to 'Details', event_path(e.id) %></td>
+</tr>
+<%end%>
 </table>

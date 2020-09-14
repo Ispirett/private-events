@@ -31,11 +31,7 @@
     <th>Event Place</th>
     <th>Event Time</th>
   </tr>
-  <% current_user.events.each do |e| %>
-    <% if e.event_date < Time.now%>
-      <% if e.nil? %>
-      <h4>No Events Found</h4>
-      <% end %>
+  <% current_user.events.past.each do |e| %>
       <tr>
         <td>
           <%= e.event_name %>
@@ -47,7 +43,6 @@
           <%= e.event_date %>
         </td>
       </tr>
-    <% end%>
   <% end %>
 </table>
 
@@ -58,8 +53,7 @@
     <th>Event Place</th>
     <th>Event Time</th>
   </tr>
-  <% current_user.events.each do |e| %>
-    <% if e.event_date > Time.now%>
+  <% current_user.events.upcomming.each do |e| %>
       <tr>
         <td>
           <%= e.event_name %>
@@ -71,7 +65,7 @@
           <%= e.event_date %>
         </td>
       </tr>
-    <% end%>
+    
   <% end %>
 </table>
 
