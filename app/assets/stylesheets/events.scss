@@ -1,3 +1,68 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+body,
+html {
+    height: 100%;
+}
+
+.hero-bg {
+    background-image: image-url("event-bg.jpeg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding-top: 130px;
+}
+
+.form {
+    background-color: white;
+    opacity: .8;
+    border-radius: 4px;
+}
+
+.login-btn:hover {
+    color: wheat;
+    background-color: blue;
+}
+
+h2.styled-h2 {
+    color: blanchedalmond;
+    font-size: bold;
+}
+
+.date-time {
+    margin-left: 56px;
+}
+
+.event-place {
+    margin-left: 30px;
+}
+
+.past-upcomming {
+    padding: 0 200px 0 200px;
+}
+
+.past-upcomming th {
+    font-size: 25px;
+    color: black;
+}
+
+.past-upcomming td {
+    font-size: 23px;
+    color: black;
+}
+
+.det a {
+    color: black;
+}
+
+.past-upcomming h2 {
+    font-weight: bold;
+}
+
+.past-upcomming img {
+    width: 100px;
+    height: 100px;
+}

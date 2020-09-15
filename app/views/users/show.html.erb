@@ -24,8 +24,10 @@
   <% end %>
 </table>
 <h2>Registered Events</h2>
-<% byebug %>
-<% if !(current_user.events.past.nil?) %>
+<% if current_user.events.past.empty? && current_user.events.upcomming.empty?%>
+<p>No Registered Events Found</p>
+<% end %>
+<% if !(current_user.events.past.empty?) %>
   <h3>Previously Attended Events</h3>
   <table>
     <tr>
@@ -48,6 +50,7 @@
     <% end %>
   </table>
 <% end %>
+<% if !(current_user.events.upcomming.empty?) %>
 <h3>Upcoming Attended Events</h3>
 <table>
   <tr>
@@ -70,4 +73,5 @@
     
   <% end %>
 </table>
+<% end %>
 
