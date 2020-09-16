@@ -30,7 +30,7 @@
 <% end %>
 <% if current_user.events.past.empty? && current_user.events.upcomming.empty?%>
 <h2 class="text-light">Registered Events</h2>
-<p>No Registered Events Found</p>
+<p class="text-light">No Registered Events Found</p>
 <% end %>
 <% if !(current_user.events.past.empty?) %>
   <h3>Previously Attended Events</h3>

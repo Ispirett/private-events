@@ -1,19 +1,17 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav w-100">
       <li class="nav-item active">
       <%= link_to 'Home', user_path(session[:user_id]), class: 'nav-link'  %>
-        
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+        <%= link_to 'Create Event', new_event_path(session[:user_id]), class: 'nav-link'  %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <%= link_to 'All Events', events_path, class: 'nav-link'  %>
+      </li>
+      <li class="nav-item ml-auto">
+        <%= link_to 'Log out', destroy_session_users_path, :method => 'delete', class: 'nav-link'  %>
       </li>
     </ul>
   </div>

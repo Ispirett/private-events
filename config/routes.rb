@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     collection do
       get 'new_session'
       post 'create_session'
+      delete 'destroy_session'
     end
   end
 
@@ -13,5 +14,6 @@ Rails.application.routes.draw do
       post 'register'
     end
   end
+  root 'users#show'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

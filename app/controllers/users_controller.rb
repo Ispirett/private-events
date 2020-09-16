@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  before_action :check_session , only: %i[show]
   def new
     @user = User.new
   end
@@ -18,11 +19,8 @@ class UsersController < ApplicationController
     @events = helpers.current_user.created_events
   end
 
-  def edit; end
-
-  def update; end
-
-  def new_session; end
+  def new_session; 
+  end
 
   def create_session
     c_user = User.find_by(username: params['username'])
@@ -34,9 +32,20 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy_session
+    session[:user_id] = nil
+    redirect_to new_session_users_path
+  end
+
   private
 
   def user_params
     params.require(:user).permit(:first_name, :username, :last_name, :email, :avatar)
+  end
+
+  def check_session
+    if session[:user_id].nil?
+      redirect_to new_session_users_path
+    end
   end
 end
