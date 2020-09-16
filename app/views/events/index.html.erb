@@ -1,5 +1,4 @@
-
-<div class="hero-bg past-upcomming">
+<div class="hero-bg past-upcomming index-p">
     <% if @events.past.empty? && @events.upcomming.empty? %>
     <p>No Events Found</p>
     <% else %>
@@ -25,7 +24,7 @@
     <% end %>
     <% if !(@events.upcomming.empty?) %>
         <h2>Upcomming Events</h2>
-        <table class="table table-hover">
+        <table class="table table-hover text-white">
         <tr>
         <th>Event Name</th>
         <th>Event Place</th>

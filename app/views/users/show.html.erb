@@ -1,5 +1,9 @@
-<h2>User Created Events</h2>
-<table>
+<div class="container-fluid demo past-upcomming">
+<div class="content">
+<div class="large-header">
+<% if !@events.empty? %>
+<h2 class="text-light">User Created Events</h2>
+<table class="table table-hover">
   <tr>
     <th>Event Name</th>
     <th>Event Place</th>
@@ -23,13 +27,14 @@
     </tr>
   <% end %>
 </table>
-<h2>Registered Events</h2>
+<% end %>
 <% if current_user.events.past.empty? && current_user.events.upcomming.empty?%>
+<h2 class="text-light">Registered Events</h2>
 <p>No Registered Events Found</p>
 <% end %>
 <% if !(current_user.events.past.empty?) %>
   <h3>Previously Attended Events</h3>
-  <table>
+  <table class="table table-hover">
     <tr>
       <th>Event Name</th>
       <th>Event Place</th>
@@ -51,8 +56,8 @@
   </table>
 <% end %>
 <% if !(current_user.events.upcomming.empty?) %>
-<h3>Upcoming Attended Events</h3>
-<table>
+<h2 class="text-light">Upcoming Events</h2>
+<table class="table table-hover">
   <tr>
     <th>Event Name</th>
     <th>Event Place</th>
@@ -74,4 +79,6 @@
   <% end %>
 </table>
 <% end %>
-
+</div>
+</div>
+</div>

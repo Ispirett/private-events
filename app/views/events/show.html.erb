@@ -1,6 +1,8 @@
-<div class="hero-bg past-upcomming">
-<h2>Event Details</h2>
-<table class="table table-hover">
+<div class="container-fluid demo past-upcomming">
+<div class="content">
+<div class="large-header">
+<h2 class="styled-h2">Event Details</h2>
+<table class="table table-hover text-white table-white">
     <tr>
         <th>Event Name</th>
         <th>Event Place</th>
@@ -8,43 +10,46 @@
         <th>Event Poster</th>
     </tr>
     <tr>
-        <td class="mt-5"><%= @event.event_name %></td>
-        <td class="mt-3"><%= @event.event_place %></td>
-        <td class="mt-3"><%= @event.event_date %></td>
-        <td><%= image_tag(url_for(@event.event_image)) %></td>
+        <td><%= @event.event_name %></td>
+        <td><%= @event.event_place %></td>
+        <td><%= @event.event_date %></td>
+        <td><%= link_to  image_tag(url_for(@event.event_image)), url_for(@event.event_image), target: :_blank %>
+        </td>
     </tr>
 </table>
-<br>
-
-<br>
-
-<br>
-
-<%= button_to 'Rigester', register_event_path(@event.id), methd: :post %>
-<h2>Creator</h2>
-<%= image_tag(url_for(@event.creator.avatar)) %>
-<br>
-<%= @event.creator.first_name %>
-<br>
-<%= @event.creator.last_name %>
-<br>
-<%= @event.creator.email %>
-<br>
-<%= @event.creator.username %>
-<h2>Event Attendees</h2>
-<table>
-<tr>
-<th>First Name</th>
-<th>Last Name</th>
-<th>Email</th>
-</tr>
-<% @event.attendees.each do |e|%>
-<tr>
-<td><%= e.first_name %></td>
-<td><%= e.last_name %></td>
-<td><%= e.email %></td>
-</tr>
+<%= button_to 'Rigester Now', register_event_path(@event.id), methd: :post, class: "register-btn " %>
+<h2 class="styled-h2">Creator</h2>
+<table class="table table-hover table-white">
+    <tr>
+        <th class="texr-white">Name</th>
+        <th>Creator's Email</th>
+        <th>Creator's Photo</th>
+    </tr>
+    <tr>
+        <td><%= @event.creator.first_name %>
+        <%= @event.creator.last_name %>
+        </td>
+        <td><%= @event.creator.email %></td>
+        <td><%= link_to  image_tag(url_for(@event.creator.avatar)), url_for(@event.creator.avatar), target: :_blank %>
+        </td>
+    </tr>
+</table>
+<h2 class="styled-h2">Event Attendees</h2>
+<table class="table table-hover">
+    <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    </tr>
+    <% @event.attendees.each do |e|%>
+    <tr>
+    <td><%= e.first_name %></td>
+    <td><%= e.last_name %></td>
+    <td><%= e.email %></td>
+    </tr>
 <%end%>
 
 </table>
+</div>
+</div>
 </div>
