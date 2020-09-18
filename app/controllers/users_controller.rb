@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  @error = nil
   before_action :check_session , only: %i[show]
   def new
     @user = User.new

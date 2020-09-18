@@ -3,7 +3,7 @@
 <div class="main d-flex justify-content-center align-items-center flex-column">
 <h2 class="styled-h2">Sign up</h2>
 <div class= "form">
-<%= form_with model: @user, class: 'form py-5 pl-5' do |f| %>
+<%= form_with model: @user, class: 'form py-5 pl-5', id: 'test_signup' do |f| %>
   <%= label_tag(:username, "Username", class: 'm-2') %>
   <%= f.text_field :username, class: 'ml-1' %>
   <br/>
