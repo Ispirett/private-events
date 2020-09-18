@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   def create_session
     c_user = User.find_by(username: params['username'])
     if c_user.nil?
+      @error = "User name doesn't exists"
       render 'new_session'
     else
       session[:user_id] = c_user.id
