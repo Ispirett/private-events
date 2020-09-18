@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
 class UsersController < ApplicationController
   @error = nil
-  before_action :check_session , only: %i[show]
+  before_action :check_session, only: %i[show]
   def new
     @user = User.new
   end
@@ -20,8 +18,7 @@ class UsersController < ApplicationController
     @events = helpers.current_user.created_events
   end
 
-  def new_session; 
-  end
+  def new_session; end
 
   def create_session
     c_user = User.find_by(username: params['username'])
@@ -46,8 +43,6 @@ class UsersController < ApplicationController
   end
 
   def check_session
-    if session[:user_id].nil?
-      redirect_to new_session_users_path
-    end
+    redirect_to new_session_users_path if session[:user_id].nil?
   end
 end

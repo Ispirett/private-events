@@ -1,18 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe Event, type: :model do
-  
   DatabaseCleaner.start
 
   describe Event do
     context 'validates event name' do
       it { should validate_presence_of(:event_name) }
     end
-    
+
     context 'validates event place' do
       it { should validate_presence_of(:event_place) }
     end
-    
+
     context 'validates event date' do
       it { should validate_presence_of(:event_date) }
     end

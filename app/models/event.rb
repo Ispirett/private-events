@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Event < ApplicationRecord
   has_many :event_attendees
   has_many :attendees, through: :event_attendees

@@ -1,24 +1,51 @@
-# README
+# Private Events
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Users can create events. Events take place at a specific date and at a location and they are grouped as upcoming and past.
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+- Ruby 2.7.0
+- Rails 6.0.3.2
+- VS Code
 
-* System dependencies
+## Prerequisites
 
-* Configuration
+In order to make the program work, you need to have ruby interpreter installed in your system. You can get the latest version of ruby from [official website](https://www.ruby-lang.org/en/downloads/).
 
-* Database creation
+# Getting Started
 
-* Database initialization
+To get a local copy of the repository please run the following commands on your terminal:
 
-* How to run the test suite
+```
+$ cd <folder>
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+$ git clone https://github.com/UmairAhmad125/private-events.git
+$ cd private-events
+$ bundle install
+$ yarn install --check-files
+```
 
-* Deployment instructions
+# Authors
 
-* ...
+:bust_in_silhouette: **Umair Ahmad**
+
+- Github: [@umairahmad125](https://github.com/UmairAhmad125)
+- Linkedin: https://www.linkedin.com/in/umair-ahmad-b5a89015a/
+- Twitter: [@umairahmadDP](https://twitter.com/umairahmadDP)
+- email: (umairahmad125@gmail.com)
+  :bust_in_silhouette: **Muhammad Talha Waqar**
+- Github: [@talhawaqar](https://github.com/talhawaqar)
+- Linkedin: [@Muhammad Talha Waqar](https://www.linkedin.com/in/talha-waqar-977257145/)
+- Twitter: [@MuhammadTalhaW4](https://twitter.com/MuhammadTalhaW4)
+- email: (talhawaqar007@hotmail.com).
+
+## Show your support
+
+Give a :star:️ if you like this project!
+
+## Acknowledgments
+
+- <a href="https://www.theodinproject.com/" target="_blank">The Odin Project</a>
+- <a href="https://guides.rubyonrails.org/" target="_blank">Rails Guides</a>

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class EventsController < ApplicationController
   def index
     @events = Event.all
@@ -23,7 +21,7 @@ class EventsController < ApplicationController
   end
 
   def register
-    e = EventAttendee.create(event_id: params[:id], user_id: session[:user_id])
+    EventAttendee.create(event_id: params[:id], user_id: session[:user_id])
     flash[:notice] = 'Hello'
     redirect_to events_path
   end
