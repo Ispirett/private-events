@@ -1,0 +1,143 @@
+// Place all the styles related to the events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+body,
+html {
+  height: 100%;
+}
+
+.hero-bg {
+  background-image: url("event-bg.jpeg");
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding-top: 130px;
+}
+
+.form {
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 4px;
+}
+
+.login-btn:hover {
+  color: wheat;
+  background-color: blue;
+}
+
+h2.styled-h2 {
+  color: blanchedalmond;
+  font-weight: bold;
+}
+
+.table-white {
+  color: whitesmoke !important;
+}
+
+.date-time {
+  margin-left: 56px;
+}
+
+.event-place {
+  margin-left: 30px;
+}
+
+// .past-upcomming {
+//     padding: 0 200px 0 200px;
+// }
+.past-upcomming th {
+  font-size: 25px;
+  color: black;
+}
+
+img {
+  border-radius: 50%;
+}
+
+.past-upcomming td {
+  font-size: 23px;
+  color: blanchedalmond !important;
+}
+
+.det a {
+  color: black;
+}
+
+.past-upcomming h2 {
+  font-weight: bold;
+}
+
+.past-upcomming img {
+  margin-left: 50px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.register-btn {
+  background-color: burlywood;
+  border-radius: 8px;
+  font-size: 22px;
+  font-weight: bold;
+  margin-left: 300px;
+}
+
+.register-btn:hover {
+  color: whitesmoke;
+  background-color: black;
+}
+
+.large-header {
+  position: relative;
+  padding: 100px 300px 0 300px;
+  width: 100%;
+  background: #111;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  z-index: 1;
+}
+
+.demo .large-header {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg");
+}
+
+.main-title {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  color: #f9f1e9;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.container-fluid {
+  padding: 0 !important;
+}
+
+.index-p {
+  padding: 100px 200px 0 200px;
+  color: rgb(172, 27, 27) !important;
+}
+
+.past-upcomming table tr th {
+  color: blanchedalmond !important;
+}
+
+.index-p table tr th {
+  color: rgb(172, 27, 27) !important;
+}
+
+.index-p td {
+  color: rgb(172, 27, 27) !important;
+}
+
+.index-p a {
+  color: rgb(172, 27, 27) !important;
+}

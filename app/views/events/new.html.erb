@@ -1,0 +1,20 @@
+<div class="hero-bg">
+<div class="main d-flex justify-content-center align-items-center flex-column">
+<h2 class="styled-h2">Create an Event</h2>
+<%= form_with model:@event, class: 'form py-5 pl-5', id: 'event-form' do |f|%> 
+  <%= label_tag(:event_name, "Event Name", class: "") %>
+  <%= f.text_field :event_name, class: "ml-5" %>
+  <br/>
+  <%= label_tag(:event_place, "Event Location", class: "") %>
+  <%= f.text_field :event_place, class: "event-place" %>
+  <br/>
+  <%= label_tag(:event_date, "Event Date", class: "") %>
+  <%= datetime_local_field(:event, :event_date, class: "date-time") %>
+  <br/>
+  <%= label_tag(:event_image, "Choose event image", class: "") %>
+  <%= f.file_field :event_image %>
+  <br/>
+  <%= f.submit "Create Event", class: "btn btn-success login-btn" %>
+<% end %>
+</div>
+</div>

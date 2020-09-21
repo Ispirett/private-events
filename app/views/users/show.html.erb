@@ -1,0 +1,84 @@
+<div class="container-fluid demo past-upcomming">
+<div class="content">
+<div class="large-header">
+<% if !@events.empty? %>
+<h2 class="text-light">User Created Events</h2>
+<table class="table table-hover">
+  <tr>
+    <th>Event Name</th>
+    <th>Event Place</th>
+    <th>Event Time</th>
+    <th>Register</th>
+  </tr>
+  <% @events.each do |e| %>
+    <tr>
+      <td>
+        <%= e.event_name %>
+      </td>
+      <td>
+        <%= e.event_place %>
+      </td>
+      <td>
+        <%= e.event_date %>
+      </td>
+      <td>
+        <%= e.event_date %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<% end %>
+<% if current_user.events.past.empty? && current_user.events.upcomming.empty?%>
+<h2 class="text-light">Registered Events</h2>
+<p class="text-light">No Registered Events Found</p>
+<% end %>
+<% if !(current_user.events.past.empty?) %>
+  <h3>Previously Attended Events</h3>
+  <table class="table table-hover">
+    <tr>
+      <th>Event Name</th>
+      <th>Event Place</th>
+      <th>Event Time</th>
+    </tr>
+    <% current_user.events.past.each do |e| %>
+        <tr>
+          <td>
+            <%= e.event_name %>
+          </td>
+          <td>
+            <%= e.event_place %>
+          </td>
+          <td>
+            <%= e.event_date %>
+          </td>
+        </tr>
+    <% end %>
+  </table>
+<% end %>
+<% if !(current_user.events.upcomming.empty?) %>
+<h2 class="text-light">Upcoming Events</h2>
+<table class="table table-hover">
+  <tr>
+    <th>Event Name</th>
+    <th>Event Place</th>
+    <th>Event Time</th>
+  </tr>
+  <% current_user.events.upcomming.each do |e| %>
+      <tr>
+        <td>
+          <%= e.event_name %>
+        </td>
+        <td>
+          <%= e.event_place %>
+        </td>
+        <td>
+          <%= e.event_date %>
+        </td>
+      </tr>
+    
+  <% end %>
+</table>
+<% end %>
+</div>
+</div>
+</div>

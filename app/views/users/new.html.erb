@@ -1,0 +1,30 @@
+
+<div class="hero-bg">
+<div class="main d-flex justify-content-center align-items-center flex-column">
+<h2 class="styled-h2">Sign up</h2>
+<div class= "form">
+<%= form_with model: @user, class: 'form py-5 pl-5', id: 'test_signup' do |f| %>
+  <%= label_tag(:username, "Username", class: 'm-2') %>
+  <%= f.text_field :username, class: 'ml-1' %>
+  <br/>
+  <%= label_tag(:first_name, "First Name", class: 'm-2') %>
+  <%= f.text_field :first_name %>
+  <br/>
+  <%= label_tag(:last_name, "Last Name", class: 'm-2') %>
+  <%= f.text_field :last_name %>
+  <br/>
+  <%= label_tag(:email, "Email", class: 'email_tag') %>
+  <%= f.email_field :email, class: 'email'%>
+  <br/>
+  <%= label_tag(:avatar, "Choose Image", class: 'ml-2 mt-2') %>
+  <%= f.file_field :avatar %>
+  <br/>
+  <div class="d-flex flex-row align-items-center pr-2">
+        <%= f.submit "Sign Up", class: "login-btn btn btn-success mb-1" %>
+        <p class="ml-2 mt-4 mr-2">or</p>
+        <%= link_to 'Log in', new_session_users_path, class: "mt-2 font-weight-bold" %>
+  </div>
+<% end %>
+</div>
+</div>
+</div>
